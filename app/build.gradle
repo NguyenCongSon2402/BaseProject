@@ -1,5 +1,7 @@
 plugins {
     id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-android-extensions'
 }
 
 android {
@@ -11,8 +13,34 @@ android {
         targetSdk 32
         versionCode 1
         versionName "1.0"
-
+        multiDexEnabled true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    flavorDimensions "default"
+    productFlavors {
+        appTest {
+            buildConfigField "String", "inter_splash", "\"ca-app-pub-3940256099942544/1033173712\""
+            buildConfigField "String", "inter_splash_other_app", "\"ca-app-pub-3940256099942544/1033173712\""
+            buildConfigField "String", "native_language", "\"ca-app-pub-3940256099942544/2247696110\""
+            buildConfigField "String", "openApp_resume", "\"ca-app-pub-3940256099942544/3419835294\""
+            buildConfigField "String", "Inter_click_category", "\"ca-app-pub-3940256099942544/1033173712\""
+            buildConfigField "String", "Inter_view_file", "\"ca-app-pub-3940256099942544/8691691433\""
+            buildConfigField "String", "Banner_Home", "\"ca-app-pub-3940256099942544/6300978111\""
+            buildConfigField "String", "Banner_Other", "\"ca-app-pub-3940256099942544/6300978111\""
+
+            buildConfigField "boolean", "build_debug", "true"
+        }
+        appRelease {
+            buildConfigField "String", "inter_splash", ""
+            buildConfigField "String", "inter_splash_other_app", ""
+            buildConfigField "String", "native_language", ""
+            buildConfigField "String", "openApp_resume", ""
+            buildConfigField "String", "Inter_click_category", ""
+            buildConfigField "String", "Inter_view_file", ""
+            buildConfigField "String", "Banner_Home", ""
+            buildConfigField "String", "Banner_Other", ""
+            buildConfigField "boolean", "build_debug", "false"
+        }
     }
 
     buildTypes {
@@ -25,6 +53,14 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
+    viewBinding {
+        enabled true
+    }
+    dataBinding {
+        enabled true
+    }
+
 }
 
 dependencies {
@@ -35,4 +71,21 @@ dependencies {
 
     implementation 'io.reactivex.rxjava3:rxandroid:3.0.0'
     implementation 'io.reactivex.rxjava3:rxjava:3.0.4'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+
+    //sdp. ssp
+    implementation 'com.intuit.sdp:sdp-android:1.1.0'
+    implementation 'com.intuit.ssp:ssp-android:1.1.0'
+    implementation 'uk.co.chrisjenx:calligraphy:2.3.0'
+
+    //lottie animation
+    def lottieVersion = "3.4.0"
+    implementation "com.airbnb.android:lottie:$lottieVersion"
+
+    //Apero lib
+    implementation 'com.github.AperoVN:AperoModuleAds:5.1.2'
+    implementation 'androidx.multidex:multidex:2.0.1'
+    implementation 'com.google.android.gms:play-services-ads:20.4.0'
+    implementation 'com.facebook.shimmer:shimmer:0.5.0@aar'
+
 }

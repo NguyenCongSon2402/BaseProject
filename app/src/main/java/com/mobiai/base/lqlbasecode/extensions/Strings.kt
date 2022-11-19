@@ -14,3 +14,10 @@ fun String.loge(TAG: String) {
 fun Throwable.loge(TAG: String) {
     Log.e(TAG, this.toString())
 }
+operator fun String.times(x: Int): String {
+    val stringBuilder = StringBuilder()
+    for (i in 1..x) {
+        stringBuilder.append(this)
+    }
+    return stringBuilder.toString()
+}

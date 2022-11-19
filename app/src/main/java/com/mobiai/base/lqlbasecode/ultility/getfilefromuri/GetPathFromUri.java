@@ -36,7 +36,7 @@ public class GetPathFromUri {
 
         if (path == null || !(new File(path)).exists())
             try {
-                path = RealPathUtil.INSTANCE.getRealPath(context, uri);
+//                path = RealPathUtil.INSTANCE.getRealPath(context, uri);
             } catch (Exception e2) {
             }
 
@@ -53,7 +53,7 @@ public class GetPathFromUri {
 
         if (path == null || !(new File(path)).exists()) {
             try {
-                path = RealPathUtilApero.INSTANCE.getPathFromData(context, uri);
+//                path = RealPathUtilApero.INSTANCE.getPathFromData(context, uri);
             } catch (Exception e2) {
             }
         }

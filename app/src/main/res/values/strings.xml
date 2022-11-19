@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">BaseProject</string>
+    <string name="this_action_can_contain_ad">This action can contain ad</string>
+    <string name="language_english">English</string>
+    <string name="language_spain">Spain</string>
+    <string name="language_portugal">Portugal</string>
+    <string name="language_hindi">Hindi</string>
+    <string name="language_germany">Germany</string>
+    <string name="language_france">France</string>
+    <string name="language_china">China</string>
+    <string name="language">Language</string>
+
 </resources>

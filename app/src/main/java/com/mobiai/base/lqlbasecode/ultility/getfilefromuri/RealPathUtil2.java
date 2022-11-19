@@ -375,15 +375,15 @@ public class RealPathUtil2 {
         try {
             result = getPathFromData(context, data);
             Log.i("Splash", "Path from other app : " + result);
-            Log.i("Splash", "Path from other app 2 : " + RealPathUtilApero.INSTANCE.getPathFromData(context, data));
+//            Log.i("Splash", "Path from other app 2 : " + RealPathUtilApero.INSTANCE.getPathFromData(context, data));
 
 
             if (TextUtils.isEmpty(result)) {
-                result = RealPathUtilApero.INSTANCE.getPathFromData(context, data);
+//                result = RealPathUtilApero.INSTANCE.getPathFromData(context, data);
             }
 
         } catch (Exception e) {
-            result = RealPathUtilApero.INSTANCE.getPathFromData(context, data);
+//            result = RealPathUtilApero.INSTANCE.getPathFromData(context, data);
         }
 
         Log.i("Splash", "Path from other app : " + (new File(result)).exists() + ", "+ result);
