@@ -6,7 +6,7 @@
 
     <RelativeLayout
         android:background="@drawable/bg_border_gray_10sdp"
-        android:backgroundTint="#F8F8F8"
+        android:backgroundTint="#077F72FE"
         android:id="@+id/ad_unit_content"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -45,7 +45,6 @@
                         android:maxLines="2"
                         tools:text="sdsdsdsdsd"
                         android:textColor="@color/color_primary"
-                        android:fontFamily="@font/gilroy_semi_bold"
                         android:textSize="@dimen/_12ssp" />
 
 
@@ -60,7 +59,6 @@
                         android:ellipsize="end"
                         android:textColor="@color/color_description_text"
                         android:textSize="@dimen/_10ssp"
-                        android:fontFamily="@font/gilroy_medium"
                         />
 
 
@@ -80,10 +78,10 @@
                     android:layout_height="wrap_content"
                     android:textSize="@dimen/_10ssp"
                     android:textColor="@color/color_description_text"
-                    android:fontFamily="@font/gilroy_medium"/>
+                    />
 
             </LinearLayout>
-            <Button
+            <TextView
                 android:id="@+id/ad_call_to_action"
                 android:layout_width="fill_parent"
                 android:layout_height="@dimen/_35sdp"

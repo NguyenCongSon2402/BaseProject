@@ -12,6 +12,13 @@ dependencyResolutionManagement {
         google()
         mavenCentral()
         maven { url "https://jitpack.io" }
+        maven {
+            url 'https://artifactory.apero.vn/artifactory/gradle-release/'
+            credentials {
+                username "AperoAI"
+                password "AperoAI@123"
+            }
+        }
     }
 }
 rootProject.name = "BaseProject"
