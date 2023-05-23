@@ -3,11 +3,14 @@ package com.mobiai.app.ui.activity
 import android.app.Activity
 import android.content.Context
 import android.content.Intent
+import android.view.Display.Mode
 import com.ads.control.admob.AppOpenManager
 import com.apero.inappupdate.AppUpdate
 import com.apero.inappupdate.AppUpdateManager
 import com.mobiai.R
 import com.mobiai.app.ui.fragment.HomeFragment
+import com.mobiai.base.basecode.service.db.ModelTestDB
+import com.mobiai.base.basecode.service.db.testModelDB
 import com.mobiai.base.basecode.ui.activity.BaseActivity
 import com.mobiai.databinding.ActivityLanguageBinding
 import com.mobiai.databinding.ActivityMainBinding
@@ -37,6 +40,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
             AppOpenManager.getInstance().disableAppResume()
         }
         attachFragment()
+        this.testModelDB.insertModelTest(ModelTestDB(null, "TEST_INSERT", System.currentTimeMillis()))
     }
 
     private fun attachFragment(){
