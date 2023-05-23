@@ -47,7 +47,7 @@ class App : AdsMultiDexApplication() {
             if (BuildConfig.build_debug) AperoAdConfig.ENVIRONMENT_DEVELOP else AperoAdConfig.ENVIRONMENT_PRODUCTION
         aperoAdConfig = AperoAdConfig(this, AperoAdConfig.PROVIDER_ADMOB, environment)
 
-        val adjustConfig = AdjustConfig(true, ADJUST_TOKEN)
+        val adjustConfig = AdjustConfig( ADJUST_TOKEN)
         adjustConfig.eventAdImpression = EVENT_AD_IMPRESSION_ADJUST
         adjustConfig.eventNamePurchase = EVENT_PURCHASE_ADJUST
         aperoAdConfig.adjustConfig = adjustConfig
