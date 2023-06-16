@@ -17,6 +17,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.viewbinding.ViewBinding
+import com.google.firebase.remoteconfig.FirebaseRemoteConfig
+import com.google.firebase.remoteconfig.FirebaseRemoteConfigSettings
+import com.mobiai.BuildConfig
 import com.mobiai.R
 import com.mobiai.base.basecode.language.LanguageUtil
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
@@ -48,6 +51,7 @@ abstract class BaseActivity<V:ViewBinding > : AppCompatActivity(){
     protected abstract fun getViewBinding() : V
 
     protected abstract fun createView()
+
 
     private var decorView: View? = null
     override fun onWindowFocusChanged(hasFocus: Boolean) {
@@ -221,6 +225,7 @@ abstract class BaseActivity<V:ViewBinding > : AppCompatActivity(){
         if (on)
             setFullscreen()
     }
+
 
 
 }
