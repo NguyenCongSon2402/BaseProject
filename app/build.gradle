@@ -10,12 +10,12 @@ plugins {
 apply plugin: 'kotlin-kapt'
 
 android {
-    compileSdk 33
+    compileSdk 34
 
     defaultConfig {
         applicationId "com.mobiai"
         minSdk 23
-        targetSdk 33
+        targetSdk 34
         versionCode 1
         versionName "1.0"
         multiDexEnabled true
@@ -26,7 +26,7 @@ android {
 
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
@@ -62,36 +62,20 @@ android {
             buildConfigField "String", "inter_splash_medium", "\"ca-app-pub-3940256099942544/8691691433\""
 
         }
-        appRelease {
-            buildConfigField "boolean", "build_debug", "false"
-            buildConfigField "String", "inter_splash", ""
-            buildConfigField "String", "native_language", ""
-            buildConfigField "String", "openApp_resume", ""
-        }
     }
 
 }
 
 dependencies {
+    // Add new dependencies here
 
+
+
+    // NO CHANGE
     implementation platform('com.google.firebase:firebase-bom:31.2.2')
 
-    // Add the dependencies for the Crashlytics and Analytics libraries
-    // When using the BoM, you don't specify versions in Firebase library dependencies
     implementation 'com.google.firebase:firebase-crashlytics-ktx'
     implementation 'com.google.firebase:firebase-analytics-ktx'
-
-    implementation 'androidx.appcompat:appcompat:1.6.1'
-    implementation 'com.google.android.material:material:1.9.0'
-
-
-    implementation 'io.reactivex.rxjava3:rxandroid:3.0.2'
-    implementation 'io.reactivex.rxjava3:rxjava:3.1.5'
-
-    //Apero lib
-    implementation 'apero-inhouse:apero-ads:1.0.6-alpha06'
-
-    //firebase
     implementation 'com.google.firebase:firebase-analytics'
     implementation 'com.google.firebase:firebase-crashlytics'
     implementation 'com.google.firebase:firebase-core'
@@ -101,26 +85,29 @@ dependencies {
     implementation 'com.google.firebase:firebase-perf-ktx'
     implementation 'com.google.firebase:firebase-core:21.1.1'
 
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.10.0'
+
+
+    implementation 'io.reactivex.rxjava3:rxandroid:3.0.2'
+    implementation 'io.reactivex.rxjava3:rxjava:3.1.5'
+
+    //Apero lib
+    implementation 'apero-inhouse:apero-ads:1.0.6-alpha06'
+    implementation 'apero:in.app.update:1.0.8@aar'
+    implementation 'com.google.android.play:app-update:2.1.0'
+    implementation 'com.google.android.play:app-update-ktx:2.1.0'
 
     //sdp. ssp
     implementation 'com.intuit.sdp:sdp-android:1.1.0'
     implementation 'com.intuit.ssp:ssp-android:1.1.0'
 
-    //font
-//    implementation 'uk.co.chrisjenx:calligraphy:2.3.0'
-
-    //lottie animation
-    def lottieVersion = "3.4.0"
-    implementation "com.airbnb.android:lottie:$lottieVersion"
-
-
-    //apero update inapp
-    implementation 'apero:in.app.update:1.0.8@aar'
-    implementation 'com.google.android.play:app-update:2.1.0'
-    implementation 'com.google.android.play:app-update-ktx:2.1.0'
+    implementation "com.airbnb.android:lottie:3.4.0"
 
     def room_version = "2.5.1"
     implementation "androidx.room:room-runtime:$room_version"
     annotationProcessor "androidx.room:room-compiler:$room_version"
     kapt "androidx.room:room-compiler:$room_version"
+
+    implementation 'com.android.billingclient:billing:6.0.1'
 }
