@@ -36,3 +36,22 @@ plugins {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+
+
+tasks.register("release") {
+    def buildFile = file('app/build.gradle')
+    def adsID = file('ads.txt').text
+    println(adsID)
+
+    def contentRelease = buildFile.text.replaceFirst("//ads", adsID)
+
+    buildFile.text = contentRelease
+}
+
+
+
+tasks.register("remove_ads_release") {
+    def buildFile = file('build.gradle')
+    def orgContent = buildFile.text.replaceFirst(/appRelease\s*\{[^{}]*\}/, "//ads")
+    buildFile.text = orgContent
+}
