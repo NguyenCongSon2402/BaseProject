@@ -64,7 +64,7 @@ android {
         }
 
         // DON'T REMOVE. Auto replace Ads Id for Release
-        appRelease {
+       /* appRelease {
             manifestPlaceholders = [admob_app_id: "ca-app-pub-4973559944609228~1107567880"]
             buildConfigField "boolean", "build_debug", "false"
             buildConfigField "String", "inter_splash", "\"ca-app-pub-3940256099942544/1033173712\""
@@ -73,7 +73,7 @@ android {
             buildConfigField "String", "inter_splash_priority", "\"ca-app-pub-3940256099942544/8691691433\""
             buildConfigField "String", "inter_splash_medium", "\"ca-app-pub-3940256099942544/8691691433\""
 
-        }
+        } */
     }
 
 }
